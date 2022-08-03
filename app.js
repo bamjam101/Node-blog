@@ -3,28 +3,30 @@ const express = require('express');
 const app = express();
 
 app.use(express.static('public'));
+// use view engine
+app.set('view engine', 'ejs')
 
 app.listen(3000);
 
-// routing to pages
-
-// Navigate to index webpage
-app.get("/", (req, res) => {
-    res.sendFile('./views/index.html', {root: __dirname});
-});
-// Navigate to about webpage
-
-app.get("/about", (req, res) => {
-    res.sendFile('./views/about.html', {root: __dirname});
-});
-// Navigate to register webpage
-
-app.get("/write", (req, res) => {
-    res.sendFile('./views/write.html', {root: __dirname});
+// Routes
+app.get('/', (req,res)=> {
+    const blogs = [];
+    res.render('index', {title: 'Home', blogs: blogs});
 });
 
+app.get('/about', (req,res)=> {
+    res.render('about', {title: 'About'});
+});
+
+app.get('/contact', (req,res)=> {
+    res.render('contact', {title: 'Contact'});
+});
+
+app.get('/create', (req,res)=> {
+    res.render('create', {title: 'Create New Blog'});
+});
 // Return Error page for invalid path
 
 app.use((req, res) => {
-    res.status(404).sendFile('./views/404.html', {root: __dirname});
+    res.render('404', {title: 'Error'})
 })

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs') %>
+
+<body>
+    <%- include('../partials/nav.ejs') %>
+    <main class="form-container">
+        <form>
+            <label>Blog Title</label>
+            <input id="blog-title" name="title" type="text" placeholder="Type here..." required>
+
+            <label>Blog Body</label>
+            <input id="blog-body" name="body" type="text" placeholder="Type here..." required>
+
+            <div class="button">
+                <a id="proceedBtn" onclick="mainFunction()">
+                    <span class="hover">Hover Here</span>
+                    <span class="change">Proceed</span>
+                </a>
+            </div>
+        </form>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>
