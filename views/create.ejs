@@ -10,15 +10,18 @@
             <label>Blog Title</label>
             <input id="blog-title" name="title" type="text" placeholder="Type here..." required>
 
+            <label>Blog Snippet</label>
+            <input id="blog-snippet" name="snippet" type="text" placeholder="Type here..." required>
+
             <label>Blog Body</label>
-            <input id="blog-body" name="body" type="text" placeholder="Type here..." required>
+            <textarea id="blog-body" name="body" type="text" placeholder="Type here..." required>
 
             <div class="button">
-                <a id="proceedBtn" onclick="mainFunction()">
+                <a id="proceedBtn">
                     <span class="hover">Hover Here</span>
                     <span class="change">Proceed</span>
                 </a>
-            </div>
+            <\/div>
         </form>
     </main>
     <%- include('../partials/footer.ejs') %>
