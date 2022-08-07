@@ -6,7 +6,7 @@
 <body>
     <%- include('../partials/nav.ejs') %>
     <main class="form-container">
-        <form>
+        <form id="blog-post" action="/blogs" method="POST">
             <label>Blog Title</label>
             <input id="blog-title" name="title" type="text" placeholder="Type here..." required>
 
@@ -14,14 +14,14 @@
             <input id="blog-snippet" name="snippet" type="text" placeholder="Type here..." required>
 
             <label>Blog Body</label>
-            <textarea id="blog-body" name="body" type="text" placeholder="Type here..." required>
+            <textarea id="blog-body" name="body" placeholder="Type here..." required></textarea>
 
             <div class="button">
-                <a id="proceedBtn">
+                <button id="proceedBtn" href="javascript:getElementById('blog-post').submit();">
                     <span class="hover">Hover Here</span>
                     <span class="change">Proceed</span>
-                </a>
-            <\/div>
+                </button>
+            </div>
         </form>
     </main>
     <%- include('../partials/footer.ejs') %>

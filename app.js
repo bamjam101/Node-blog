@@ -12,19 +12,14 @@ mongoose.connect(dbURI)
 
 // declare public scope using express static
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true}));
 
 // use view engine
 app.set('view engine', 'ejs')
 
-// Routes
+// Home Page route
 app.get('/', (req,res)=> {
-    Blog.find().sort({ createdAt: -1})
-        .then((result) => {
-            res.render('index', {title: 'Home', blogs: result});
-        })
-        .catch((err) => {
-            console.log(err);
-        });
+    res.redirect('/blogs');
 });
 
 app.get('/about', (req,res)=> {
@@ -35,7 +30,31 @@ app.get('/contact', (req,res)=> {
     res.render('contact', {title: 'Contact'});
 });
 
-app.get('/create', (req,res)=> {
+// Routes to manipulate data on the DB or Blog routes
+app.get('/blogs', (req,res)=> {
+    Blog.find().sort({ createdAt: -1})
+        .then((result) => {
+            res.render('index', {title: 'Home', blogs: result});
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    });
+
+
+app.post('/blogs', (req,res) => {
+    const blog = new Blog(req.body);
+
+    blog.save()
+        .then((result) => {
+            res.redirect('/blogs');
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+});
+    
+app.get('/blogs/create', (req,res)=> {
     res.render('create', {title: 'Create New Blog'});
 });
 

@@ -186,19 +186,16 @@ form:hover textarea {
   justify-content: center;
 }
 
-form a {
-  align-items: center;
-  text-decoration: none;
+.button button {
   text-transform: uppercase;
   border: none;
-  justify-content: center;
   overflow: hidden;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: white;
   background-color: rgba(0, 0, 0, 0.25);
   text-align: center;
   height: 7.5vh;
-  padding: 0.2rem 2vh;
+  padding: 0.2rem 10px;
   border-radius: 0.4rem;
   cursor: pointer;
   transform: translateY(0);
@@ -229,7 +226,7 @@ form:hover .change {
   }
 }
 
-form a:hover {
+form button:hover {
   border-radius: 0.65rem;
   background: #66fcf1;
   box-shadow: 0 0 10px #66fcf1, 0 0 40px #66fcf1, 0 0 80px #66fcf1;
@@ -237,7 +234,7 @@ form a:hover {
   font-weight: bold;
 }
 
-form:hover a {
+form:hover button {
   transform: translateY(5vh);
 }
 
