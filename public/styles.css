@@ -536,3 +536,64 @@ h3 {
   background-color: #c5c6c7;
   box-shadow: 0 0 100px #c5c6c7;
 }
+
+/* ======================Index page========================== */
+
+.header{
+  font-size: 4rem;
+  display: block;
+  text-align: center;
+}
+
+.blog-container {
+  display: block;
+  width: 80vw;
+  height: 50vh;
+  margin: auto;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.blog-title {
+  display: inline;
+  text-align: left;
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 10px 0;
+  transition: 0.3s;
+}
+
+.blog-title:hover {
+  text-shadow: 0 2px 5px white;
+  cursor: pointer;
+}
+
+.blog-snippet {
+  font-size: 2.6rem;
+  padding-bottom: 2vh;
+}
+
+.oops {
+  font-size: 2.6rem;
+}
+
+
+/* ===========Scroll bar=========== */
+
+::-webkit-scrollbar{
+  width: 0.75em;
+}
+
+::-webkit-scrollbar-track{
+  border-radius: 100vw;
+  background: #1f2833;
+}
+
+::-webkit-scrollbar-thumb{
+  background: rgba(128, 128, 128, 0.753);
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: #c5c6c7c4;   
+}

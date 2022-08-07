@@ -3,7 +3,7 @@
 <%- include('../partials/head.ejs') %>
 <body>
     <%- include('../partials/nav.ejs') %>
-    <h1>All Blogs</h1>
+    <h1 class="header">Blog Feed</h1>
     <div class="blog-container">
         <% if (blogs.length > 0) {%>
             <% blogs.forEach(blog => {%>
@@ -11,7 +11,7 @@
                 <p class="blog-snippet"><%= blog.snippet%></p>
             <% })%>
         <% } else {%>
-            <p>Opps! No Blogs To Show.</p>
+            <p class="oops">Oops! No Blogs To Show.</p>
         <% }%>
     </div>
     <%- include('../partials/footer.ejs') %>
