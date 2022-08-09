@@ -79,6 +79,7 @@ body {
 
 nav ul {
   display: flex;
+  justify-content: center;
   margin-right: 2rem;
   list-style: none;
   text-decoration: none;
@@ -126,11 +127,9 @@ nav ul {
 }
 
 form {
-  position: absolute;
-  right: 0;
-  left: 0;
-  margin-left: auto;
-  margin-right: auto;
+  position: relative;
+  display: block;
+  margin: auto;
   background-color: rgba(0, 0, 0, 0.25);
   width: 60%;
   height: 50%;
@@ -142,24 +141,29 @@ form {
 }
 
 form label {
+  display: block;
   font-family: consolas;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   color: white;
-  font-size: 2rem;
+  font-size: 1.8rem;
   opacity: 0;
   transition: 1s;
 }
 
 form input, form textarea {
+  position: relative;
+  display: block;
+  margin: auto;
   width: 90%;
-  margin-left: 5vh;
   background-color: #1f2833;
   border: rgba(0, 0, 0, 0.5) 3px solid;
   color: #c5c6c7;
   border-radius: 1rem;
   opacity: 0;
+}
+
+form input {
+  height: 2rem;
 }
 
 textarea {
@@ -187,6 +191,7 @@ form:hover textarea {
 }
 
 .button button {
+  display: block;
   text-transform: uppercase;
   border: none;
   overflow: hidden;
@@ -235,7 +240,7 @@ form button:hover {
 }
 
 form:hover button {
-  transform: translateY(5vh);
+  transform: translateY(0);
 }
 
 input:hover {
@@ -245,7 +250,7 @@ input:hover {
 /* ========================================= */
 footer {
   background-color: rgba(0, 0, 0, 0);
-  height: 4vh;
+  height: 3vh;
   display: block;
   position: absolute;
   bottom: 5%;
@@ -255,7 +260,7 @@ footer {
   margin-left: auto;
   text-align: center;
   color: black;
-  font-size: 2.6rem;
+  font-size: 2.2rem;
   animation: footer 2.25s ease-out;
   animation-fill-mode: forwards;
 }
@@ -565,9 +570,15 @@ h3 {
   cursor: pointer;
 }
 
-.blog-snippet {
+.blog-snippet, .warn {
   font-size: 2.6rem;
   padding-bottom: 2vh;
+}
+
+.anchor {
+  font-size: 2.4rem;
+  display: block;
+  margin: auto;
 }
 
 .oops {
