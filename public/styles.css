@@ -574,6 +574,11 @@ h3 {
   font-size: 2.6rem;
 }
 
+.blog-anchor {
+  text-decoration: none;
+  color: black;
+}
+
 
 /* ===========Scroll bar=========== */
 

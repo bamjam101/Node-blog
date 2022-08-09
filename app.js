@@ -34,6 +34,7 @@ app.get('/contact', (req,res)=> {
 app.get('/blogs', (req,res)=> {
     Blog.find().sort({ createdAt: -1})
         .then((result) => {
+            console.log(result);
             res.render('index', {title: 'Home', blogs: result});
         })
         .catch((err) => {
@@ -57,6 +58,28 @@ app.post('/blogs', (req,res) => {
 app.get('/blogs/create', (req,res)=> {
     res.render('create', {title: 'Create New Blog'});
 });
+
+app.get('/blogs/:id', (req,res) => {
+    const id = req.params.id;
+    Blog.findById(id)
+        .then((result) => {
+            res.render('about', {blog: result, title: 'About Blog'});
+        })
+        .catch((err)=> {
+            console.log(err);
+        });
+});
+
+// app.delete('/blogs/:id', (req,res) => {
+//     const id = req.params.id;
+//     Blog.deleteById(id)
+//         .then((result) => {
+//             res.redirect('index', {title: 'Home', blogs: result});
+//         })
+//         .catch((err)=> {
+//             console.log(err);
+//         });
+// });
 
 // Return Error page for invalid path
 app.use((req, res) => {
